@@ -29,6 +29,9 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.38")
     testCompileOnly("org.projectlombok:lombok:1.18.38")
     testAnnotationProcessor("org.projectlombok:lombok:1.18.38")
+
+    //json 기반 표기법 사용
+    implementation 'org.springframework.boot:spring-boot-starter-json'
 }
 
 tasks.named('test') {
