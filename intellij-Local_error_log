@@ -1,0 +1,83 @@
+명령어
+./gradlew bootRun --args="--spring.batch.job.name=terminatorJob infiltrationTargets={\"value\":\"판교_서버실,안산_데이터센터\",\"type\":\"java.lang.String\"}"
+
+
+> Task :bootRun FAILED
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.2)
+
+2025-06-23T11:00:56.132+09:00  INFO 9972 --- [kill-batch-system] [           main] c.s.b.k.KillBatchSystemApplication       : Starting KillBatchSystemApplication using Java 17.0.15 with PID 9972 (C:\Users\Bistelligence\Desktop\study\스프링배치\kill-batch-system\build\classes\java\main started by Bistelligence in C:\Users\Bistelligence\Desktop\study\스프링배치\kill-batch-system)
+2025-06-23T11:00:56.134+09:00  INFO 9972 --- [kill-batch-system] [           main] c.s.b.k.KillBatchSystemApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-06-23T11:00:56.739+09:00  INFO 9972 --- [kill-batch-system] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-23T11:00:56.872+09:00  INFO 9972 --- [kill-batch-system] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:1917c22d-8f19-4c8d-b0fb-547ecabef19a user=SA
+2025-06-23T11:00:56.874+09:00  INFO 9972 --- [kill-batch-system] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-23T11:00:57.086+09:00  INFO 9972 --- [kill-batch-system] [           main] c.s.b.k.KillBatchSystemApplication       : Started KillBatchSystemApplication in 1.253 seconds (process running for 1.474)
+2025-06-23T11:00:57.089+09:00  INFO 9972 --- [kill-batch-system] [           main] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: [infiltrationTargets={\value\:\판교_서버실,안산_데이터센터\,\type\:\java.lang.String\}]
+2025-06-23T11:00:57.120+09:00  INFO 9972 --- [kill-batch-system] [           main] .s.b.a.l.ConditionEvaluationReportLogger :
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-23T11:00:57.137+09:00 ERROR 9972 --- [kill-batch-system] [           main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.batch.core.converter.JobParametersConversionException: Unable to decode job parameter {\value\:\판교_서버실,안산_데이터센터\,\type\:\java.lang.String\}
+        at org.springframework.batch.core.converter.JsonJobParametersConverter.decode(JsonJobParametersConverter.java:121) ~[spring-batch-core-5.2.2.jar:5.2.2]
+        at org.springframework.batch.core.converter.DefaultJobParametersConverter.getJobParameters(DefaultJobParametersConverter.java:104) ~[spring-batch-core-5.2.2.jar:5.2.2]
+        at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:173) ~[spring-boot-autoconfigure-3.5.2.jar:3.5.2]
+        at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:169) ~[spring-boot-autoconfigure-3.5.2.jar:3.5.2]
+        at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:164) ~[spring-boot-autoconfigure-3.5.2.jar:3.5.2]
+        at org.springframework.boot.SpringApplication.lambda$callRunner$4(SpringApplication.java:784) ~[spring-boot-3.5.2.jar:3.5.2]
+        at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:82) ~[spring-core-6.2.8.jar:6.2.8]
+        at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60) ~[spring-core-6.2.8.jar:6.2.8]
+        at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:86) ~[spring-core-6.2.8.jar:6.2.8]
+        at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:796) ~[spring-boot-3.5.2.jar:3.5.2]
+        at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:784) ~[spring-boot-3.5.2.jar:3.5.2]
+        at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:772) ~[spring-boot-3.5.2.jar:3.5.2]
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) ~[na:na]
+        at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357) ~[na:na]
+        at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510) ~[na:na]
+        at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+        at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[na:na]
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[na:na]
+        at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+        at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+        at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:772) ~[spring-boot-3.5.2.jar:3.5.2]
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:325) ~[spring-boot-3.5.2.jar:3.5.2]
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.2.jar:3.5.2]
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.2.jar:3.5.2]
+        at com.system.batch.killbatchsystem.KillBatchSystemApplication.main(KillBatchSystemApplication.java:10) ~[main/:na]
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected character ('\' (code 92)): was expecting double-quote to start field name
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 2]
+        at com.fasterxml.jackson.core.JsonParser._constructReadException(JsonParser.java:2672) ~[jackson-core-2.19.1.jar:2.19.1]
+        at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:742) ~[jackson-core-2.19.1.jar:2.19.1]
+        at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddName(ReaderBasedJsonParser.java:1909) ~[jackson-core-2.19.1.jar:2.19.1]
+        at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:709) ~[jackson-core-2.19.1.jar:2.19.1]
+        at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:173) ~[jackson-databind-2.19.1.jar:2.19.1]
+        at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342) ~[jackson-databind-2.19.1.jar:2.19.1]
+        at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4971) ~[jackson-databind-2.19.1.jar:2.19.1]
+        at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3887) ~[jackson-databind-2.19.1.jar:2.19.1]
+        at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3855) ~[jackson-databind-2.19.1.jar:2.19.1]
+        at org.springframework.batch.core.converter.JsonJobParametersConverter.decode(JsonJobParametersConverter.java:107) ~[spring-batch-core-5.2.2.jar:5.2.2]
+        ... 24 common frames omitted
+
+2025-06-23T11:00:57.142+09:00  INFO 9972 --- [kill-batch-system] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-23T11:00:57.171+09:00  INFO 9972 --- [kill-batch-system] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':bootRun'.
+> Process 'command 'C:\Program Files\Eclipse Adoptium\jdk-17.0.15.6-hotspot\bin\java.exe'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 2s
