@@ -1,4 +1,4 @@
-package com.system.batch.killbatchsystem.ZombieProcess;
+package com.system.batch.killbatchsystem.zombieProcess;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;

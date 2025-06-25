@@ -1,4 +1,4 @@
-package com.system.batch.killbatchsystem.ZombieProcess;
+package com.system.batch.killbatchsystem.zombieProcess;
 
 import org.springframework.batch.core.StepContribution;
 import org.springframework.batch.core.scope.context.ChunkContext;
